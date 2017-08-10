@@ -1,15 +1,15 @@
 # Installation
 
 [Install NativeScript](https://docs.nativescript.org/start/quick-setup)
-
+```
 npm install -g nativescript
-
-Windows:
+```
+__Windows:__
 ```
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"
 ```
 
-Mac:
+__Mac:__
 ```
 ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"
 ```
@@ -31,6 +31,7 @@ __App ID locations:__
 /app/App_Resources/Android/app.gradle
 
 __Storage Bucket ID location:__
+
 /app/main.ts
 
 ## Login Setup
@@ -40,9 +41,9 @@ __Get Sha-1 from Keystore:__
 $ $ keytool -exportcert -list -v -alias androiddebugkey -keystore ~/.android/<your-key-here>.keystore
 ```
 
-[Download Windows OpenSSL](http://code.google.com/p/openssl-for-windows/downloads/detail?name=openssl-0.9.8k_X64.zip) extract to `C:\Users\<yourusername>\openssl\`
+__Generate Key Hash__
 
-Generate Key Hash
+[Download Windows OpenSSL](http://code.google.com/p/openssl-for-windows/downloads/detail?name=openssl-0.9.8k_X64.zip) extract to `C:\Users\<yourusername>\openssl\`
 ```
 $ keytool -exportcert -alias androiddebugkey -keystore C:\Users\<yourusername>\.android\<your-key-here>.keystore | "C:\Users\<yourusername>\openssl\bin\openssl.exe" sha1 -binary | "C:\Users\<yourusername>\openssl\bin\openssl.exe" base64
 ```
@@ -54,11 +55,10 @@ $ keytool -exportcert -alias androiddebugkey -keystore C:\Users\<yourusername>\.
 ## Icons/ Splashscreens
 [Generate from Image](http://images.nativescript.rocks/)
 
-Use image that is 1024 x 1024, got to "Launch Icons" tab, upload image, set background color, and press "Go". 
+Use 1024 x 1024 image, go to "Launch Icons" tab in site above link, upload image, set background color, and press "Go". 
 
-Copy files into /app/App_Resources
+Copy downloaded files into /app/App_Resources
 
-[Useful Code](https://github.com/EddyVerbruggen/nativescript-plugin-firebase-demo/blob/master/Firebase/app/main-view-model.js)
 
 # Build
 Must build for release for facebook and google to function properly. [Documentation](https://docs.nativescript.org/publishing/publishing-android-apps)
@@ -67,7 +67,7 @@ $ tns build android --release --key-store-path <path-to-your-keystore> --key-sto
 
 $ tns build ios
 ```
-# Built with
+# Reference
 [NativeScript](https://www.nativescript.org/)
 
 [Giftler](https://github.com/jlooper/giftler)
