@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "629975771351",
+    "firebase_url": "https://naytiv-fef13.firebaseio.com",
+    "project_id": "naytiv-fef13",
+    "storage_bucket": "naytiv-fef13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629975771351:android:1ce563487d57693e",
+        "android_client_info": {
+          "package_name": "com.nay.tiv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629975771351-i856i9h8nrajadb1ju5dt7e0ga0hvl5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nay.tiv",
+            "certificate_hash": "4e9bb9b02ea813f62ed3efcc46e2afec71e12a8d"
+          }
+        },
+        {
+          "client_id": "629975771351-rdag6p5b54qcmq02fl4a4dpe6s810d1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5myjEJZn8dsAbw65V4dDb90UgaDsPQV4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629975771351-0gg34st879k2int9jsmd1ksnnclka8tj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nay.tiv"
+              }
+            },
+            {
+              "client_id": "629975771351-rdag6p5b54qcmq02fl4a4dpe6s810d1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>629975771351-0gg34st879k2int9jsmd1ksnnclka8tj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.629975771351-0gg34st879k2int9jsmd1ksnnclka8tj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBnO5ycKTh4103WrD_HO3CDD71n7fcQgQo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>629975771351</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nay.tiv</string>
+	<key>PROJECT_ID</key>
+	<string>naytiv-fef13</string>
+	<key>STORAGE_BUCKET</key>
+	<string>naytiv-fef13.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:629975771351:ios:1ce563487d57693e</string>
+	<key>DATABASE_URL</key>
+	<string>https://naytiv-fef13.firebaseio.com</string>
+	
+	<key>CFBundleURLTypes</key>
+	<array>
+	<dict>
+   		<key>CFBundleTypeRole</key>
+   		<string>Editor</string>
+   		<key>CFBundleURLName</key>
+   		<string>REVERSED_CLIENT_ID</string>
+   		<key>CFBundleURLSchemes</key>
+   		<array>
+   			<string>com.googleusercontent.apps.629975771351-0gg34st879k2int9jsmd1ksnnclka8tj</string>
+   		</array>
+   	</dict>
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+		<string>fb109286443091716</string>
+		</array>
+	</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>109286443091716</string>
+	<key>FacebookDisplayName</key>
+	<string>Naytiv</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>fbapi</string>
+	<string>fb-messenger-api</string>
+	<string>fbauth2</string>
+	<string>fbshareextension</string>
+	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Help users verify their identity.</string>
+</dict>
+</plist>

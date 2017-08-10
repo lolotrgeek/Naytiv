@@ -1,0 +1,33 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// this import should be first in order to load some required settings (like globals and reflect-metadata)
+var platform_1 = require("nativescript-angular/platform");
+var app_module_1 = require("./app.module");
+var backend_service_1 = require("./services/backend.service");
+var firebase = require("nativescript-plugin-firebase");
+firebase.init({
+    onMessageReceivedCallback: function (message) {
+        console.log("Title: " + message.title);
+        console.log("Body: " + message.body);
+        // if your server passed a custom property called 'foo', then do this:
+        console.log("Value of 'foo': " + message.data.foo);
+    },
+    //persist should be set to false as otherwise numbers aren't returned during livesync
+    persist: false,
+    storageBucket: 'gs://naytiv-fef13.appspot.com',
+    onAuthStateChanged: function (data) {
+        console.log(JSON.stringify(data));
+        if (data.loggedIn) {
+            backend_service_1.BackendService.token = data.user.uid;
+        }
+        else {
+            backend_service_1.BackendService.token = "";
+        }
+    }
+}).then(function (instance) {
+    console.log("firebase.init done");
+}, function (error) {
+    console.log("firebase.init error: " + error);
+});
+platform_1.platformNativeScriptDynamic().bootstrapModule(app_module_1.AppModule);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwwR0FBMEc7QUFDMUcsMERBQTRFO0FBRTVFLDJDQUF5QztBQUN6Qyw4REFBNEQ7QUFFNUQsdURBQTBEO0FBRTFELFFBQVEsQ0FBQyxJQUFJLENBQUM7SUFDWix5QkFBeUIsRUFBRSxVQUFDLE9BQVk7UUFDdEMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxZQUFVLE9BQU8sQ0FBQyxLQUFPLENBQUMsQ0FBQTtRQUN0QyxPQUFPLENBQUMsR0FBRyxDQUFDLFdBQVMsT0FBTyxDQUFDLElBQU0sQ0FBQyxDQUFBO1FBQ3BDLHNFQUFzRTtRQUN0RSxPQUFPLENBQUMsR0FBRyxDQUFDLHFCQUFtQixPQUFPLENBQUMsSUFBSSxDQUFDLEdBQUssQ0FBQyxDQUFBO0lBQ3BELENBQUM7SUFFRCxxRkFBcUY7SUFDckYsT0FBTyxFQUFFLEtBQUs7SUFDZCxhQUFhLEVBQUUsK0JBQStCO0lBQzlDLGtCQUFrQixFQUFFLFVBQUMsSUFBUztRQUM1QixPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQTtRQUNqQyxFQUFFLENBQUMsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQztZQUNsQixnQ0FBYyxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQztRQUN2QyxDQUFDO1FBQ0QsSUFBSSxDQUFDLENBQUM7WUFDSixnQ0FBYyxDQUFDLEtBQUssR0FBRyxFQUFFLENBQUM7UUFDNUIsQ0FBQztJQUNILENBQUM7Q0FDRixDQUFDLENBQUMsSUFBSSxDQUNMLFVBQVUsUUFBUTtJQUNoQixPQUFPLENBQUMsR0FBRyxDQUFDLG9CQUFvQixDQUFDLENBQUM7QUFDcEMsQ0FBQyxFQUNELFVBQVUsS0FBSztJQUNiLE9BQU8sQ0FBQyxHQUFHLENBQUMsdUJBQXVCLEdBQUcsS0FBSyxDQUFDLENBQUM7QUFDL0MsQ0FBQyxDQUNBLENBQUM7QUFDSixzQ0FBMkIsRUFBRSxDQUFDLGVBQWUsQ0FBQyxzQkFBUyxDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyB0aGlzIGltcG9ydCBzaG91bGQgYmUgZmlyc3QgaW4gb3JkZXIgdG8gbG9hZCBzb21lIHJlcXVpcmVkIHNldHRpbmdzIChsaWtlIGdsb2JhbHMgYW5kIHJlZmxlY3QtbWV0YWRhdGEpXHJcbmltcG9ydCB7IHBsYXRmb3JtTmF0aXZlU2NyaXB0RHluYW1pYyB9IGZyb20gXCJuYXRpdmVzY3JpcHQtYW5ndWxhci9wbGF0Zm9ybVwiO1xyXG5cclxuaW1wb3J0IHsgQXBwTW9kdWxlIH0gZnJvbSBcIi4vYXBwLm1vZHVsZVwiO1xyXG5pbXBvcnQgeyBCYWNrZW5kU2VydmljZSB9IGZyb20gXCIuL3NlcnZpY2VzL2JhY2tlbmQuc2VydmljZVwiO1xyXG5cclxuaW1wb3J0IGZpcmViYXNlID0gcmVxdWlyZShcIm5hdGl2ZXNjcmlwdC1wbHVnaW4tZmlyZWJhc2VcIik7XHJcblxyXG5maXJlYmFzZS5pbml0KHsgXHJcbiAgb25NZXNzYWdlUmVjZWl2ZWRDYWxsYmFjazogKG1lc3NhZ2U6IGFueSkgPT4ge1xyXG4gICAgY29uc29sZS5sb2coYFRpdGxlOiAke21lc3NhZ2UudGl0bGV9YClcclxuICAgIGNvbnNvbGUubG9nKGBCb2R5OiAke21lc3NhZ2UuYm9keX1gKVxyXG4gICAgLy8gaWYgeW91ciBzZXJ2ZXIgcGFzc2VkIGEgY3VzdG9tIHByb3BlcnR5IGNhbGxlZCAnZm9vJywgdGhlbiBkbyB0aGlzOlxyXG4gICAgY29uc29sZS5sb2coYFZhbHVlIG9mICdmb28nOiAke21lc3NhZ2UuZGF0YS5mb299YClcclxuICB9LFxyXG5cclxuICAvL3BlcnNpc3Qgc2hvdWxkIGJlIHNldCB0byBmYWxzZSBhcyBvdGhlcndpc2UgbnVtYmVycyBhcmVuJ3QgcmV0dXJuZWQgZHVyaW5nIGxpdmVzeW5jXHJcbiAgcGVyc2lzdDogZmFsc2UsXHJcbiAgc3RvcmFnZUJ1Y2tldDogJ2dzOi8vbmF5dGl2LWZlZjEzLmFwcHNwb3QuY29tJyxcclxuICBvbkF1dGhTdGF0ZUNoYW5nZWQ6IChkYXRhOiBhbnkpID0+IHtcclxuICAgIGNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KGRhdGEpKVxyXG4gICAgaWYgKGRhdGEubG9nZ2VkSW4pIHtcclxuICAgICAgQmFja2VuZFNlcnZpY2UudG9rZW4gPSBkYXRhLnVzZXIudWlkO1xyXG4gICAgfVxyXG4gICAgZWxzZSB7XHJcbiAgICAgIEJhY2tlbmRTZXJ2aWNlLnRva2VuID0gXCJcIjtcclxuICAgIH1cclxuICB9XHJcbn0pLnRoZW4oXHJcbiAgZnVuY3Rpb24gKGluc3RhbmNlKSB7XHJcbiAgICBjb25zb2xlLmxvZyhcImZpcmViYXNlLmluaXQgZG9uZVwiKTtcclxuICB9LFxyXG4gIGZ1bmN0aW9uIChlcnJvcikge1xyXG4gICAgY29uc29sZS5sb2coXCJmaXJlYmFzZS5pbml0IGVycm9yOiBcIiArIGVycm9yKTtcclxuICB9XHJcbiAgKTtcclxucGxhdGZvcm1OYXRpdmVTY3JpcHREeW5hbWljKCkuYm9vdHN0cmFwTW9kdWxlKEFwcE1vZHVsZSk7XHJcbiJdfQ==
